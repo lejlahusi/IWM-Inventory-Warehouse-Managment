@@ -16,8 +16,6 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         track=(Button) findViewById(R.id.track);
-        quantity=(Button) findViewById(R.id.quantity);
-        help=(Button) findViewById(R.id.help);
 
         track.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,19 +24,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
-        quantity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(StartActivity.this,QuantityActivity.class));
-            }
-        });
 
-        help.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(StartActivity.this,HelpActivity.class));
-            }
-        });
 
     }
 }

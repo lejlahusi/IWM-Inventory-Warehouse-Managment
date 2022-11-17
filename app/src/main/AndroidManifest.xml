@@ -14,37 +14,46 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_second"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_second_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartWarehouse.NoActionBar"
         tools:targetApi="31">
         <activity
             android:name=".HelpActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.SmartWarehouse.NoActionBar" />
         <activity
             android:name=".QuantityActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.SmartWarehouse.NoActionBar" />
         <activity
             android:name=".TrackActivity"
-            android:exported="false" />
-        <activity
-            android:name=".StartActivity"
             android:exported="false"
-            android:label="@string/title_activity_start"
             android:theme="@style/Theme.SmartWarehouse.NoActionBar" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false"/>
+        />
+        <activity
+            android:name=".StartActivity"
+            android:exported="true"
+            android:label="IWM"
+            android:theme="@style/Theme.SmartWarehouse.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+            </activity>
+
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
+        <service android:name="com.example.foregoundservice.MqttMessage"
+                 android:enabled="true"
+                android:exported="false"></service>
 
         <meta-data
             android:name="preloaded_fonts"

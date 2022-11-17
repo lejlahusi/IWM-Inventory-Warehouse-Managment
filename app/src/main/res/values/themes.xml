@@ -15,6 +15,7 @@
     </style>
     <style name="Theme.SmartWarehouse.NoActionBar">
         <item name="windowActionBar">false</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/mblue</item>
         <item name="windowNoTitle">true</item>
     </style>
     <style name="Theme.SmartWarehouse.AppBarOverlay"

@@ -1,30 +1,20 @@
 package com.example.smartwarehouse;
 
-import static android.content.ContentValues.TAG;
-
-import android.app.PendingIntent;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.eclipse.paho.android.service.MqttAndroidClient;
-import org.eclipse.paho.client.mqttv3.IMqttActionListener;
+//import org.eclipse.paho.android.service.MqttAndroidClient;
+import info.mqtt.android.service.Ack;
+import info.mqtt.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttToken;
 import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttException;
-import org.eclipse.paho.client.mqttv3.MqttMessage;
-
-import java.io.UnsupportedEncodingException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         topic="test/topic/smartwarehouse";
         MqttAndroidClient client =
                 new MqttAndroidClient(MainActivity.this, "tcp://test.mosquitto.org:1883",
-                        clientId);
+                        clientId, Ack.AUTO_ACK);
         iwn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
