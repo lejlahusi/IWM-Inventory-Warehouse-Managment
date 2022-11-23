@@ -1,0 +1,535 @@
+Analysis & Synthesis report for diplomskirad
+Wed Nov 23 18:08:36 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: uartrx:comb_4
+ 13. Parameter Settings for User Entity Instance: uartrx:comb_4|BaudTickGen:tickgen
+ 14. Parameter Settings for User Entity Instance: uartrx2:comb_5
+ 15. Parameter Settings for User Entity Instance: uartrx2:comb_5|BaudTickGen2:tickgen
+ 16. Port Connectivity Checks: "uartrx2:comb_5|BaudTickGen2:tickgen"
+ 17. Port Connectivity Checks: "uartrx2:comb_5"
+ 18. Port Connectivity Checks: "uartrx:comb_4|BaudTickGen:tickgen"
+ 19. Port Connectivity Checks: "uartrx:comb_4"
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Nov 23 18:08:35 2022           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; diplomskirad                                    ;
+; Top-level Entity Name              ; diplomskirad                                    ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 491                                             ;
+;     Total combinational functions  ; 468                                             ;
+;     Dedicated logic registers      ; 234                                             ;
+; Total registers                    ; 234                                             ;
+; Total pins                         ; 22                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                                      ; diplomskirad       ; diplomskirad       ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+; diplomskirad.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Hp/Documents/Diplomski rad/quartus/diplomskirad.v ;         ;
+; motori.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Hp/Documents/Diplomski rad/quartus/motori.v       ;         ;
+; uartrx.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Hp/Documents/Diplomski rad/quartus/uartrx.v       ;         ;
+; servo.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Hp/Documents/Diplomski rad/quartus/servo.v        ;         ;
+; uartrx2.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Hp/Documents/Diplomski rad/quartus/uartrx2.v      ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 491       ;
+;                                             ;           ;
+; Total combinational functions               ; 468       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 219       ;
+;     -- 3 input functions                    ; 148       ;
+;     -- <=2 input functions                  ; 101       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 318       ;
+;     -- arithmetic mode                      ; 150       ;
+;                                             ;           ;
+; Total registers                             ; 234       ;
+;     -- Dedicated logic registers            ; 234       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 22        ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 234       ;
+; Total fan-out                               ; 2276      ;
+; Average fan-out                             ; 3.05      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                         ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
+; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
+; |diplomskirad                ; 468 (284)         ; 234 (115)    ; 0           ; 0            ; 0       ; 0         ; 22   ; 0            ; |diplomskirad                                     ; work         ;
+;    |motori:comb_3|           ; 40 (40)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |diplomskirad|motori:comb_3                       ; work         ;
+;    |servo:comb_6|            ; 94 (94)           ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |diplomskirad|servo:comb_6                        ; work         ;
+;    |uartrx2:comb_5|          ; 32 (17)           ; 34 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |diplomskirad|uartrx2:comb_5                      ; work         ;
+;       |BaudTickGen2:tickgen| ; 15 (15)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |diplomskirad|uartrx2:comb_5|BaudTickGen2:tickgen ; work         ;
+;    |uartrx:comb_4|           ; 18 (18)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |diplomskirad|uartrx:comb_4                       ; work         ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                  ;
++-------------------------------------------+---------------------------------------------------------+
+; Register name                             ; Reason for Removal                                      ;
++-------------------------------------------+---------------------------------------------------------+
+; led~reg0                                  ; Stuck at VCC due to stuck port data_in                  ;
+; servo:comb_6|impuls[17..25]               ; Stuck at GND due to stuck port data_in                  ;
+; servo:comb_6|impuls[15]                   ; Stuck at VCC due to stuck port data_in                  ;
+; servo:comb_6|impuls[12]                   ; Stuck at GND due to stuck port data_in                  ;
+; servo:comb_6|impuls[4]                    ; Stuck at VCC due to stuck port data_in                  ;
+; servo:comb_6|impuls[0..2]                 ; Stuck at GND due to stuck port data_in                  ;
+; servo:comb_6|impuls[10,13]                ; Merged with servo:comb_6|impuls[16]                     ;
+; servo:comb_6|impuls[3]                    ; Merged with servo:comb_6|impuls[8]                      ;
+; motori:comb_3|ena                         ; Merged with motori:comb_3|enb                           ;
+; servo:comb_6|impuls[6,9]                  ; Merged with servo:comb_6|impuls[14]                     ;
+; servo:comb_6|impuls[5,7]                  ; Merged with servo:comb_6|impuls[11]                     ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[15] ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[15] ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[14] ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[14] ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[13] ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[13] ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[12] ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[12] ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[11] ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[11] ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[10] ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[10] ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[9]  ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[9]  ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[8]  ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[8]  ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[7]  ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[7]  ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[6]  ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[6]  ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[5]  ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[5]  ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[4]  ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[4]  ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[16] ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[16] ;
+; uartrx:comb_4|BaudTickGen:tickgen|Acc[17] ; Merged with uartrx2:comb_5|BaudTickGen2:tickgen|Acc[17] ;
+; servo:comb_6|position[0]                  ; Merged with position[0]                                 ;
+; servo:comb_6|position[1]                  ; Merged with position[1]                                 ;
+; servo:comb_6|position[2]                  ; Merged with position[2]                                 ;
+; servo:comb_6|position[3]                  ; Merged with position[3]                                 ;
+; servo:comb_6|position[4]                  ; Merged with position[4]                                 ;
+; servo:comb_6|position[5]                  ; Merged with position[5]                                 ;
+; servo:comb_6|position[6]                  ; Merged with position[6]                                 ;
+; servo:comb_6|position[7]                  ; Merged with position[7]                                 ;
+; cnt13[7..29]                              ; Lost fanout                                             ;
+; cnt12[7..29]                              ; Lost fanout                                             ;
+; cnt13[0..6]                               ; Lost fanout                                             ;
+; cnt12[0..6]                               ; Lost fanout                                             ;
+; cnt11[0..29]                              ; Lost fanout                                             ;
+; cnt9[7..29]                               ; Stuck at GND due to stuck port data_in                  ;
+; cnt8[7..29]                               ; Stuck at GND due to stuck port data_in                  ;
+; cnt7[7..29]                               ; Stuck at GND due to stuck port data_in                  ;
+; cnt9[0..6]                                ; Stuck at GND due to stuck port data_in                  ;
+; cnt8[0..6]                                ; Stuck at GND due to stuck port data_in                  ;
+; cnt7[0..6]                                ; Stuck at GND due to stuck port data_in                  ;
+; position[5..7]                            ; Stuck at GND due to stuck port data_in                  ;
+; servo:comb_6|storage[7]                   ; Stuck at GND due to stuck port data_in                  ;
+; servo:comb_6|storage[5]                   ; Merged with servo:comb_6|storage[6]                     ;
+; Total Number of Removed Registers = 231   ;                                                         ;
++-------------------------------------------+---------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 234   ;
+; Number of registers using Synchronous Clear  ; 142   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 125   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; uartrx2:comb_5|RxD_bit                  ; 3       ;
+; uartrx:comb_4|RxD_bit                   ; 3       ;
+; servo:comb_6|impuls[14]                 ; 21      ;
+; servo:comb_6|impuls[8]                  ; 6       ;
+; uartrx2:comb_5|Filter_cnt[0]            ; 3       ;
+; uartrx2:comb_5|Filter_cnt[1]            ; 3       ;
+; uartrx:comb_4|Filter_cnt[0]             ; 3       ;
+; uartrx:comb_4|Filter_cnt[1]             ; 3       ;
+; uartrx2:comb_5|RxD_sync[1]              ; 2       ;
+; uartrx:comb_4|RxD_sync[1]               ; 2       ;
+; uartrx2:comb_5|RxD_sync[0]              ; 1       ;
+; uartrx:comb_4|RxD_sync[0]               ; 1       ;
+; Total number of inverted registers = 12 ;         ;
++-----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |diplomskirad|motori:comb_3|brojac[10]     ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |diplomskirad|servo:comb_6|brojac[11]      ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |diplomskirad|cnt7[20]                     ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |diplomskirad|cnt3[4]                      ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |diplomskirad|cnt4[16]                     ;
+; 7:1                ; 30 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |diplomskirad|cnt12[18]                    ;
+; 7:1                ; 30 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |diplomskirad|cnt13[11]                    ;
+; 7:1                ; 30 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |diplomskirad|cnt8[1]                      ;
+; 7:1                ; 30 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |diplomskirad|cnt5[17]                     ;
+; 8:1                ; 30 bits   ; 150 LEs       ; 30 LEs               ; 120 LEs                ; Yes        ; |diplomskirad|cnt9[18]                     ;
+; 10:1               ; 30 bits   ; 180 LEs       ; 30 LEs               ; 150 LEs                ; Yes        ; |diplomskirad|cnt11[10]                    ;
+; 18:1               ; 4 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |diplomskirad|m1~reg0                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |diplomskirad|uartrx:comb_4|Filter_cnt[0]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |diplomskirad|uartrx2:comb_5|Filter_cnt[0] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |diplomskirad|in1                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |diplomskirad|servo:comb_6|storage         ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |diplomskirad|cnt13                        ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |diplomskirad|cnt12                        ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |diplomskirad|cnt11                        ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |diplomskirad|cnt9                         ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |diplomskirad|cnt8                         ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |diplomskirad|cnt7                         ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |diplomskirad|cnt5                         ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |diplomskirad|cnt4                         ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |diplomskirad|cnt3                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uartrx:comb_4 ;
++----------------+----------+--------------------------------+
+; Parameter Name ; Value    ; Type                           ;
++----------------+----------+--------------------------------+
+; ClkFrequency   ; 50000000 ; Signed Integer                 ;
+; Baud           ; 115200   ; Signed Integer                 ;
+; Oversampling   ; 8        ; Signed Integer                 ;
++----------------+----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uartrx:comb_4|BaudTickGen:tickgen ;
++----------------+----------+----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                               ;
++----------------+----------+----------------------------------------------------+
+; ClkFrequency   ; 50000000 ; Signed Integer                                     ;
+; Baud           ; 115200   ; Signed Integer                                     ;
+; Oversampling   ; 8        ; Signed Integer                                     ;
++----------------+----------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uartrx2:comb_5 ;
++----------------+----------+---------------------------------+
+; Parameter Name ; Value    ; Type                            ;
++----------------+----------+---------------------------------+
+; ClkFrequency   ; 50000000 ; Signed Integer                  ;
+; Baud           ; 115200   ; Signed Integer                  ;
+; Oversampling   ; 8        ; Signed Integer                  ;
++----------------+----------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uartrx2:comb_5|BaudTickGen2:tickgen ;
++----------------+----------+------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                 ;
++----------------+----------+------------------------------------------------------+
+; ClkFrequency   ; 50000000 ; Signed Integer                                       ;
+; Baud           ; 115200   ; Signed Integer                                       ;
+; Oversampling   ; 8        ; Signed Integer                                       ;
++----------------+----------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "uartrx2:comb_5|BaudTickGen2:tickgen" ;
++--------+-------+----------+-------------------------------------+
+; Port   ; Type  ; Severity ; Details                             ;
++--------+-------+----------+-------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                        ;
++--------+-------+----------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "uartrx2:comb_5"                                                                               ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; RxD_data_ready ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "uartrx:comb_4|BaudTickGen:tickgen" ;
++--------+-------+----------+-----------------------------------+
+; Port   ; Type  ; Severity ; Details                           ;
++--------+-------+----------+-----------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                      ;
++--------+-------+----------+-----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "uartrx:comb_4"                                                                                ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; RxD_data_ready ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Nov 23 18:08:32 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off diplomskirad -c diplomskirad
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file diplomskirad.v
+    Info (12023): Found entity 1: diplomskirad
+Info (12021): Found 1 design units, including 1 entities, in source file motori.v
+    Info (12023): Found entity 1: motori
+Info (12021): Found 3 design units, including 3 entities, in source file uartrx.v
+    Info (12023): Found entity 1: uartrx
+    Info (12023): Found entity 2: ASSERTION_ERROR
+    Info (12023): Found entity 3: BaudTickGen
+Info (12021): Found 1 design units, including 1 entities, in source file servo.v
+    Info (12023): Found entity 1: servo
+Info (12021): Found 1 design units, including 1 entities, in source file followline.v
+    Info (12023): Found entity 1: followline
+Info (12021): Found 3 design units, including 3 entities, in source file uartrx2.v
+    Info (12023): Found entity 1: uartrx2
+    Info (12023): Found entity 2: ASSERTION_ERROR2
+    Info (12023): Found entity 3: BaudTickGen2
+Warning (10236): Verilog HDL Implicit Net warning at diplomskirad.v(56): created implicit net for "RxD2"
+Critical Warning (10846): Verilog HDL Instantiation warning at diplomskirad.v(54): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at diplomskirad.v(55): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at diplomskirad.v(56): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at diplomskirad.v(57): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at followline.v(4): instance has no name
+Info (12127): Elaborating entity "diplomskirad" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at diplomskirad.v(30): object "counter" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at diplomskirad.v(32): object "cntl1" assigned a value but never read
+Warning (10776): Verilog HDL warning at diplomskirad.v(486): variable in1 in static task or function line may have unintended latch behavior
+Warning (10776): Verilog HDL warning at diplomskirad.v(486): variable in2 in static task or function line may have unintended latch behavior
+Warning (10776): Verilog HDL warning at diplomskirad.v(486): variable in3 in static task or function line may have unintended latch behavior
+Warning (10776): Verilog HDL warning at diplomskirad.v(486): variable in4 in static task or function line may have unintended latch behavior
+Warning (10230): Verilog HDL assignment warning at diplomskirad.v(163): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at diplomskirad.v(189): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at diplomskirad.v(213): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at diplomskirad.v(255): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at diplomskirad.v(281): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at diplomskirad.v(305): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at diplomskirad.v(342): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at diplomskirad.v(368): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at diplomskirad.v(392): truncated value with size 32 to match size of target (30)
+Warning (10030): Net "line.in1" at diplomskirad.v(486) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "line.in2" at diplomskirad.v(486) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "line.in3" at diplomskirad.v(486) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "line.in4" at diplomskirad.v(486) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "motori" for hierarchy "motori:comb_3"
+Info (12128): Elaborating entity "uartrx" for hierarchy "uartrx:comb_4"
+Warning (10036): Verilog HDL or VHDL warning at uartrx.v(12): object "RxD_endofpacket" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at uartrx.v(13): object "RxD_idle" assigned a value but never read
+Info (12128): Elaborating entity "BaudTickGen" for hierarchy "uartrx:comb_4|BaudTickGen:tickgen"
+Info (12128): Elaborating entity "uartrx2" for hierarchy "uartrx2:comb_5"
+Warning (10036): Verilog HDL or VHDL warning at uartrx2.v(12): object "RxD_endofpacket" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at uartrx2.v(13): object "RxD_idle" assigned a value but never read
+Info (12128): Elaborating entity "BaudTickGen2" for hierarchy "uartrx2:comb_5|BaudTickGen2:tickgen"
+Info (12128): Elaborating entity "servo" for hierarchy "servo:comb_6"
+Warning (10230): Verilog HDL assignment warning at servo.v(65): truncated value with size 26 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at servo.v(69): truncated value with size 26 to match size of target (1)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 90 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Hp/Documents/Diplomski rad/quartus/output_files/diplomskirad.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "RXD2"
+Info (21057): Implemented 524 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 502 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 4589 megabytes
+    Info: Processing ended: Wed Nov 23 18:08:36 2022
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Hp/Documents/Diplomski rad/quartus/output_files/diplomskirad.map.smsg.
+
+

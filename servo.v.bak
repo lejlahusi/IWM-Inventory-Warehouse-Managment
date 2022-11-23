@@ -1,0 +1,5 @@
+module servo(input clk,output servo);
+
+
+
+endmodule

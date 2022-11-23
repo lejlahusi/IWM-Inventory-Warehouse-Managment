@@ -1,0 +1,8 @@
+module diplomskirad(input clk,output diode)
+
+always @(posedge clk)
+begin 
+diode<=1;
+end
+
+endmodule

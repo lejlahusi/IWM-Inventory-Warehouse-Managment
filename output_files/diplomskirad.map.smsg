@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at diplomskirad.v(62): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at servo.v(32): always construct contains both blocking and non-blocking assignments
